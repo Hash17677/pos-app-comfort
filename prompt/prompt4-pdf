@@ -1,0 +1,24 @@
+# User Type Selection & Role-Based Session Management Enhancement
+
+## Requirement Overview
+Need to implement the export PDF option for the Invoices.
+
+### 2. Implementation
+- Add the export PDF option to the only invoice which are in the Active status
+- use the react-pdf package for implement the PDF export option (https://react-pdf.org/)
+- Information for Invoice.
+  - Shop Name Is 'COMFORT ZONE HOLDINGS (PVT) LTD' and logo in in the 'public/logo.jpg'
+  - Business Registration Number is 'PV00227984'
+  - Address is 'No. 267/D/40, Pahala Bomiriya, Kaduwela'
+  - Email - comfortzonehold@gmail.com
+  - Mobile No: 0777-686-252
+- Invoice number is justed the pure number but when print the PDF invoice number formatted as 'INV-[number]'
+- Invoice Printed Date should be there separetly.
+- I will attached the design I need something like this.
+
+## Technical Notes
+- Use ONLY Shadcn components and Tailwind CSS
+- Implement Server Actions (no API routes)
+- Ensure responsive design
+- Add loading states and error handling with Sonner toasts
+- dont install any components or pkg provide the command and I will install those
