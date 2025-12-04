@@ -38,29 +38,29 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-linear-to-br from-blue-50 to-blue-100">
+    <div className="flex min-h-screen items-center justify-center bg-linear-to-br from-blue-50 to-blue-100 p-4">
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
           {/* Logo and Shop Name */}
-          <div className="flex flex-col items-center mb-8">
+          <div className="flex flex-col items-center mb-6 sm:mb-8">
             <Image
               src="/logo.jpg"
               alt="Comfort Zone Holdings Logo"
-              width={80}
-              height={80}
-              className="mb-4 rounded-lg"
+              width={60}
+              height={60}
+              className="mb-3 sm:mb-4 rounded-lg sm:w-20 sm:h-20"
               priority
             />
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900 text-center">
               COMFORT ZONE
             </h1>
-            <p className="text-sm text-gray-600 mt-1">
+            <p className="text-xs sm:text-sm text-gray-600 mt-1 text-center">
               HOLDINGS (PVT) LTD
             </p>
           </div>
 
           {/* Login Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-sm font-medium">
                 Email Address
@@ -103,7 +103,7 @@ export default function LoginPage() {
           </form>
 
           {/* Footer */}
-          <div className="mt-6 pt-6 border-t border-gray-200">
+          <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200">
             <p className="text-xs text-center text-gray-500">
               © 2024 Comfort Zone Holdings. All rights reserved.
             </p>
