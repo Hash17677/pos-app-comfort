@@ -21,7 +21,8 @@ export default async function DashboardPage() {
   // Get total revenue (sum of netAmount from ALL invoices)
   const revenueResult = await db
     .select({ total: sum(invoiceheader.netAmount) })
-    .from(invoiceheader);
+    .from(invoiceheader)
+    .where(eq(invoiceheader.status, 'Active'));
   
   const totalRevenue = revenueResult[0]?.total ? Number(revenueResult[0].total) : 0;
 
