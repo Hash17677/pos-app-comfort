@@ -3,6 +3,7 @@ import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/render
 const styles = StyleSheet.create({
   page: {
     padding: 30,
+    paddingBottom: 80,
     fontSize: 10,
     fontFamily: 'Helvetica',
   },
@@ -151,26 +152,11 @@ const styles = StyleSheet.create({
     left: 30,
     right: 30,
     textAlign: 'center',
-    color: '#6b7280',
+    color: '#000000',
     fontSize: 8,
     borderTop: '1 solid #e5e7eb',
     paddingTop: 10,
-  },
-  statusBadge: {
-    position: 'absolute',
-    top: 30,
-    right: 30,
-    backgroundColor: '#dcfce7',
-    color: '#166534',
-    padding: '6 12',
-    borderRadius: 12,
-    fontSize: 9,
-    fontWeight: 'bold',
-  },
-  cancelledBadge: {
-    backgroundColor: '#fee2e2',
-    color: '#991b1b',
-  },
+  }
 });
 
 interface InvoicePDFProps {
