@@ -61,6 +61,7 @@ export async function addCustomer(formData: {
   name: string;
   email: string;
   mobileno: string;
+  address: string;
 }): Promise<CustomerResponse> {
   try {
     // Get current user session
@@ -94,6 +95,7 @@ export async function addCustomer(formData: {
         name: formData.name,
         email: formData.email || null,
         mobileno: formData.mobileno,
+        address: formData.address || null,
         enteredUser: session.userId,
       })
       .returning();
@@ -120,6 +122,7 @@ export async function updateCustomer(
     name: string;
     email: string;
     mobileno: string;
+    address: string;
   }
 ): Promise<CustomerResponse> {
   try {
@@ -145,6 +148,7 @@ export async function updateCustomer(
         name: formData.name,
         email: formData.email || null,
         mobileno: formData.mobileno,
+        address: formData.address || null,
         updatedAt: new Date(),
       })
       .where(eq(customers.id, id))
