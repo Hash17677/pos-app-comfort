@@ -21,7 +21,7 @@ export default function CustomersClient({ initialCustomers }: { initialCustomers
     }
   };
 
-  const handleAddCustomer = async (data: { name: string; email: string; mobileno: string }) => {
+  const handleAddCustomer = async (data: { name: string; email: string; mobileno: string; address: string }) => {
     setIsLoading(true);
     const result = await addCustomer(data);
     setIsLoading(false);
@@ -35,7 +35,7 @@ export default function CustomersClient({ initialCustomers }: { initialCustomers
     }
   };
 
-  const handleUpdateCustomer = async (data: { name: string; email: string; mobileno: string }) => {
+  const handleUpdateCustomer = async (data: { name: string; email: string; mobileno: string; address: string }) => {
     if (!editingCustomer) return;
 
     setIsLoading(true);
@@ -91,7 +91,8 @@ export default function CustomersClient({ initialCustomers }: { initialCustomers
               id: editingCustomer.id,
               name: editingCustomer.name,
               email: editingCustomer.email || '',
-              mobileno: editingCustomer.mobileno
+              mobileno: editingCustomer.mobileno,
+              address: editingCustomer.address || ''
             } : undefined}
             onSubmit={editingCustomer ? handleUpdateCustomer : handleAddCustomer}
             onCancel={handleCancel}

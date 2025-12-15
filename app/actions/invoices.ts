@@ -58,6 +58,7 @@ export async function getInvoiceById(invoiceNo: number): Promise<InvoiceResponse
         customerId: invoiceheader.customerId,
         customerName: customers.name,
         customerMobile: customers.mobileno,
+        customerAddress: customers.address,
         invoiceAmount: invoiceheader.invoiceAmount,
         discountAmount: invoiceheader.discountAmount,
         netAmount: invoiceheader.netAmount,

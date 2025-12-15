@@ -11,8 +11,9 @@ interface CustomerFormProps {
     name: string;
     email: string;
     mobileno: string;
+    address: string;
   };
-  onSubmit: (data: { name: string; email: string; mobileno: string }) => Promise<void>;
+  onSubmit: (data: { name: string; email: string; mobileno: string; address: string }) => Promise<void>;
   onCancel: () => void;
   isLoading: boolean;
 }
@@ -26,18 +27,20 @@ export default function CustomerForm({
   const [name, setName] = useState(initialData?.name || '');
   const [email, setEmail] = useState(initialData?.email || '');
   const [mobileno, setMobileno] = useState(initialData?.mobileno || '');
+  const [address, setAddress] = useState(initialData?.address || '');
 
   useEffect(() => {
     if (initialData) {
       setName(initialData.name);
       setEmail(initialData.email);
       setMobileno(initialData.mobileno);
+      setAddress(initialData.address);
     }
   }, [initialData]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await onSubmit({ name, email, mobileno });
+    await onSubmit({ name, email, mobileno, address });
   };
 
   return (
@@ -85,6 +88,18 @@ export default function CustomerForm({
           required
         />
         <p className="text-xs text-gray-500">Enter exactly 10 digits</p>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="address">Address (Optional)</Label>
+        <Input
+          id="address"
+          type="text"
+          placeholder="Enter customer address"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          disabled={isLoading}
+        />
       </div>
 
       <div className="flex gap-3 pt-4">

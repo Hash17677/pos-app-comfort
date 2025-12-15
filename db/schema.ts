@@ -17,6 +17,7 @@ export const customers = pgTable('customers', {
   name: text('name').notNull(),
   email: text('email'),
   mobileno: text('mobileno').notNull(),
+  address: text('address'),
   enteredUser: uuid('entered_user').notNull().references(() => users.id),
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at').defaultNow().notNull(),

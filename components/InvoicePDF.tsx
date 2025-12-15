@@ -164,6 +164,7 @@ interface InvoicePDFProps {
     invoiceNo: number;
     customerName: string | null;
     customerMobile: string | null;
+    customerAddress: string | null;
     invoiceAmount: number;
     discountAmount: number;
     netAmount: number;
@@ -244,6 +245,11 @@ export default function InvoicePDF({ invoice }: InvoicePDFProps) {
           <Text style={[styles.value, { marginTop: 4, fontSize: 12 }]}>
             {invoice.customerName || 'N/A'}
           </Text>
+          {invoice.customerAddress && (
+            <Text style={[styles.contactInfo, { marginTop: 2 }]}>
+              {invoice.customerAddress}
+            </Text>
+          )}
           {invoice.customerMobile && (
             <Text style={[styles.contactInfo, { marginTop: 4 }]}>
               Mobile: {invoice.customerMobile}
